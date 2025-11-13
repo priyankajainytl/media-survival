@@ -1,8 +1,31 @@
-# Crisis Impact Analysis - Food Delivery Platform
+# QuickBite Express - Crisis Recovery Analysis
+
+## CodeBasics Resume Project Challenge
+
+**Challenge Link**: [CodeBasics Resume Project Challenge #23](https://codebasics.io/challenges/codebasics-resume-project-challenge/23)
+
 
 ## Project Overview
 
-This project analyzes the impact of a crisis period (June-September 2025) on a food delivery platform's operations compared to the pre-crisis period (January-May 2025). The analysis focuses on key business metrics including order patterns, cancellation rates, delivery performance, customer ratings, and customer lifetime value.
+This project analyzes the crisis impact and recovery strategy for **QuickBite Express**, a Bengaluru-based food-tech startup founded in 2020. In June 2025, QuickBite faced a major crisis triggered by:
+
+- **Viral social media incident** involving food safety violations at partner restaurants
+- **Week-long delivery outage** during monsoon season
+- **Aggressive competitor campaigns** capitalizing on the situation
+- **Massive customer backlash** and trust issues
+
+### Crisis Impact
+- Large portion of active users disengaged
+- Sharp decline in daily orders
+- Customer satisfaction scores fell dramatically
+- Partner restaurants shifted to competing platforms
+- Customer acquisition costs rose significantly
+
+### Analysis Focus
+The analysis covers three key periods:
+- **Pre-Crisis Period**: January 1, 2025 - May 31, 2025 (5 months)
+- **Crisis Period**: June 1, 2025 - September 30, 2025 (4 months)
+- **Recovery Phase**: Post-crisis analysis and recommendations
 
 ## Dataset Description
 
@@ -21,11 +44,41 @@ The project uses a star schema with dimension and fact tables:
 - `fact_delivery_performance.csv` - Delivery timing and SLA metrics
 - `fact_ratings.csv` / `fact_ratings_clean.csv` - Customer review data
 
-### Time Periods Analyzed
-- **Pre-Crisis Period**: January 1, 2025 - May 31, 2025 (5 months)
-- **Crisis Period**: June 1, 2025 - September 30, 2025 (4 months)
+## Business Objectives & Analysis Framework
 
-## Technology Stack
+As a Data Analyst at QuickBite Express, the goal is to provide actionable insights for the leadership team across six critical areas:
+
+### 1. Customer Segments
+- Identify which customers can be recovered vs those needing new strategies
+- Analyze customer behavior changes across crisis phases
+- Segment high-value customers showing significant behavioral shifts
+
+### 2. Order Patterns 
+- Analyze order trends to uncover behavioral changes across phases
+- Track monthly order volumes and identify decline patterns
+- Understand ordering frequency changes by customer segments
+
+### 3. Delivery Performance
+- Assess delivery times, cancellations, and SLA compliance
+- Pinpoint operational gaps during crisis period
+- Measure impact on customer satisfaction
+
+### 4. Campaign Opportunities
+- Recommend targeted initiatives to rebuild trust and loyalty
+- Identify demographics most affected by the crisis
+- Develop customer acquisition and retention strategies
+
+### 5. Restaurant Partnerships
+- Predict which partnerships are most valuable for long-term retention
+- Analyze restaurant performance during crisis
+- Identify cuisine preferences and regional trends
+
+### 6. Feedback & Sentiment
+- Monitor real-time ratings, reviews, and sentiment
+- Guide ongoing recovery efforts with customer feedback analysis
+- Track satisfaction score improvements
+
+## Dataset Description
 
 - **Database**: PostgreSQL 15
 - **Analytics Dashboard**: Metabase (localhost:3000)
@@ -79,36 +132,6 @@ Stop Metabase:
 ```bash
 sh metabase-stop.sh
 ```
-
-## Key Analysis Queries
-
-### 1. Monthly Order Trends
-```sql
-CREATE VIEW month_order AS (
-    SELECT
-        CASE
-            WHEN order_timestamp BETWEEN '2025-01-01' AND '2025-06-01' THEN '1. Pre-Crisis (Jan–May 2025)'
-            WHEN order_timestamp BETWEEN '2025-06-01' AND '2025-10-01' THEN '2. Crisis (Jun–Sep 2025)'
-        END AS period,
-        COUNT(*) AS total_orders
-    FROM fact_orders
-    WHERE order_timestamp BETWEEN '2025-01-01' AND '2025-09-30'
-    GROUP BY period
-    ORDER BY period
-);
-```
-
-### 2. Cancellation Analysis by City
-Compares cancellation rates across cities between pre-crisis and crisis periods.
-
-### 3. Delivery Performance & SLA Compliance
-Analyzes on-time delivery performance and SLA compliance rates.
-
-### 4. Rating Fluctuations
-Tracks monthly rating changes to identify periods of service quality decline.
-
-### 5. Customer Lifetime Value Decline
-Identifies high-value customers showing significant behavioral changes during the crisis.
 
 ## Key Findings
 

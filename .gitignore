@@ -215,3 +215,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 ssl/*
+notes.txt
