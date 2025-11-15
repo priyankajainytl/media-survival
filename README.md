@@ -7,7 +7,7 @@
 
 ## Project Overview
 
-This project analyzes the crisis impact and recovery strategy for **QuickBite Express**, a Bengaluru-based food-tech startup founded in 2020. In June 2025, QuickBite faced a major crisis triggered by:
+**This project analyzes the crisis impact and recovery strategy for **QuickBite Express**, a Bengaluru-based food-tech startup founded in 2020. In June 2025, QuickBite faced a major crisis triggered by:
 
 - **Viral social media incident** involving food safety violations at partner restaurants
 - **Week-long delivery outage** during monsoon season
@@ -77,7 +77,7 @@ As a Data Analyst at QuickBite Express, the goal is to provide actionable insigh
 - Monitor real-time ratings, reviews, and sentiment
 - Guide ongoing recovery efforts with customer feedback analysis
 - Track satisfaction score improvements
-
+**
 ## Dataset Description
 
 - **Database**: PostgreSQL 15
@@ -142,6 +142,10 @@ The analysis reveals several critical impacts during the crisis period:
 3. **Delivery Performance**: SLA compliance and delivery time impacts
 4. **Customer Satisfaction**: Rating fluctuations indicating service quality issues
 5. **Customer Retention**: High-value customer behavior changes
+
+## Query Analysis
+
+The query analysis is located at: [query-analysis](./query-analysis.md)
 
 ## Data Schema
 
